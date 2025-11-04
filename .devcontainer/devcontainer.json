@@ -1,0 +1,27 @@
+{
+  "name": "Bielik LLM (CPU) – Codespaces",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "updateContentCommand": "bash .devcontainer/setup.sh",
+  "postAttachCommand": "echo '✅ Devcontainer ready'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "charliermarsh.ruff",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "8000": { "label": "LLM API", "onAutoForward": "openBrowser" }
+  },
+  "forwardPorts": [8000],
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  }
+}
